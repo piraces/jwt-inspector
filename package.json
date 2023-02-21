@@ -1,0 +1,37 @@
+{
+    "name": "jwt-dev-inspector",
+    "version": "1.6.2",
+    "description": "Display JWT bearer tokens in a new tab in Chrome's Developer Tools",
+    "main": "main.js",
+    "scripts": {
+        "process-styles": "npm run compile-styles && npm run css-minify",
+        "compile-styles": "node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 styles/popup.scss styles/popup.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 styles/options.scss styles/options.css && node-sass --output-style expanded --source-map true --source-map-contents true --precision 6 styles/jwt-panel.scss styles/jwt-panel.css",
+        "css-minify": "cleancss --format breaksWith=lf --output styles/popup.min.css styles/popup.css && cleancss --format breaksWith=lf --output styles/options.min.css styles/options.css && cleancss --format breaksWith=lf --output styles/jwt-panel.min.css styles/jwt-panel.css",
+        "js-minify": "uglifyjs devtools.js -o devtools.js && uglifyjs encoder.js -o encoder.js && uglifyjs jwt-panel.js -o jwt-panel.js && uglifyjs options.js -o options.js",
+        "clean": "rimraf node_modules"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/piraces/jwt-inspector.git"
+    },
+    "keywords": [
+        "chrome-extension",
+        "extension",
+        "JWT",
+        "authentication"
+    ],
+    "author": "Raúl Piracés",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/piraces/jwt-inspector/issues"
+    },
+    "homepage": "https://github.com/piraces/jwt-inspector#readme",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "clean-css-cli": "^5.6.2",
+        "node-sass": "^8.0.0",
+        "rimraf": "^4.1.2",
+        "uglify-js": "^3.17.4"
+    }
+}

@@ -1,1 +1,9 @@
+.sass-cache
+styles/*.css
+styles/*.min.css
+styles/*.min.css.map
+styles/*.css.map
+node_modules
 .DS_Store
+*.zip
+.vs

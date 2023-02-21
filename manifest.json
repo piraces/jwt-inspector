@@ -1,20 +1,30 @@
 {
-   "name": "JWT Inspector",
-   "short_name": "JWT",
-   "version": "1.6.1",
-   "description": "Display JWT bearer tokens in a new tab in Chrome's Developer Tools",
-   "author": "Tore Green",
-   "icons": { "128": "icon128.png",
-              "48": "icon48.png" },
-   "homepage_url": "https://bugjam.github.io/jwt-inspector/",
-   "devtools_page": "devtools.html",
-   "options_ui": {
-     "page": "options.html",
-     "open_in_tab": false
-   },
-   "permissions": [
-     "storage"
-   ],
-   "incognito": "split",
-   "manifest_version": 2
- }
+    "name": "JWT Dev Inspector",
+    "version": "1.6.2",
+    "description": "Display JWT bearer tokens in a new tab in Chrome's Developer Tools",
+    "author": "Raúl Piracés",
+    "homepage_url": "https://piraces.github.io/jwt-inspector/",
+    "manifest_version": 3,
+    "devtools_page": "devtools.html",
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    "permissions": ["storage"],
+    "incognito": "split",
+    "action": {
+        "default_icon": {
+            "16": "/icons/icon16.png",
+            "32": "/icons/icon32.png",
+            "48": "/icons/icon48.png",
+            "128": "/icons/icon128.png"
+        },
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "/icons/icon16.png",
+        "32": "/icons/icon32.png",
+        "48": "/icons/icon48.png",
+        "128": "/icons/icon128.png"
+    }
+}
