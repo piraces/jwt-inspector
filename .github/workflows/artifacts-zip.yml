@@ -1,64 +1,55 @@
 name: Generate artifacts to publish
 
-# Controls when the workflow will run
 on:
   release:
     types: [published]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
   chrome:
     runs-on: ubuntu-latest
-
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: 18
       - run: |
           chmod +x ./scripts/generateChromeExtension.sh
           ./scripts/generateChromeExtension.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: jwt-dev-inspector-chrome
           path: jwt-dev-inspector-chrome.zip
 
   firefox:
     runs-on: ubuntu-latest
-
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: 18
       - run: |
           chmod +x ./scripts/generateFirefoxExtension.sh
           ./scripts/generateFirefoxExtension.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: jwt-dev-inspector-firefox
           path: jwt-dev-inspector-firefox.xpi
 
   edge:
     runs-on: ubuntu-latest
-
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Use Node.js 18.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: "18"
+          node-version: 18
       - run: |
           chmod +x ./scripts/generateEdgeExtension.sh
           ./scripts/generateEdgeExtension.sh
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: jwt-dev-inspector-edge
           path: jwt-dev-inspector-edge.zip
