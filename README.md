@@ -8,9 +8,6 @@ When the tab is open, the extension inspects all server requests and picks out
 the token from any request which has an `Authorization` header containing a JWT
 bearer token.
 
-You can [install the extension from chrome web store](https://chrome.google.com/webstore/detail/jwt-inspector/jgjihoodklabhdoeffdjofnknfijolgk)
-or read more on [bugjam.github.io/jwt-inspector/](https://bugjam.github.io/jwt-inspector/).
-
 # Development
 
 The main implementation file is `jwt-panel.js`.
